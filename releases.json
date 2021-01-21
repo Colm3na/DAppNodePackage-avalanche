@@ -1,0 +1,10 @@
+{
+  "0.1.0": {
+    "hash": "/ipfs/QmXFaKPfNxwHKSaec3TguQr5XLjuainakTAe2QCQs9EZni",
+    "uploadedTo": {
+      "http://localhost:5001": "Thu, 21 Jan 2021 16:57:43 GMT",
+      "remote": "Thu, 21 Jan 2021 17:09:17 GMT"
+    },
+    "link": "https://dappnode.github.io/sdk-publish/?r=avalanche.public.dappnode.eth&v=0.1.0&h=%2Fipfs%2FQmXFaKPfNxwHKSaec3TguQr5XLjuainakTAe2QCQs9EZni&d=0xF35960302a07022aBa880DFFaEC2Fdd64d5BF1c1"
+  }
+}
