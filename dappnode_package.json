@@ -29,6 +29,8 @@
     "Pol (https://github.com/Pol-Lanski)",
     "Edu (https://github.com/eduadiez)"
   ],
+  "architectures": ["linux/amd64", "linux/arm64"],
+
   "repository": {
     "type": "git",
     "url": "https://github.com/Colm3na/DAppNodePackage-avalanche.git"
