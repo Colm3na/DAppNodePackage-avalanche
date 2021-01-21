@@ -1,3 +1,5 @@
-Go to [avalanche.public.dappnode](http://avalanche.public.dappnode/) to access to the wallet UI.
+This package contains an Avalanche Node and a local WalletUI
 
-⚠️ You will have to wait for your node to be synchronized until you can use and connect to the wallet UI on your node. You can check the logs [here](http://my.dappnode/#/packages/avalanche.public.dappnode.eth/logs) ⚠️
+**Wallet UI**: [avalanche.public.dappnode](http://avalanche.public.dappnode/)
+
+⚠️ **Important**: You will have to wait for your node to synchronize to connect the wallet UI to your node. Your wallet might not work until then. To see the progress on the synchronization of your node check the logs [here](http://my.dappnode/#/packages/avalanche.public.dappnode.eth/logs).
