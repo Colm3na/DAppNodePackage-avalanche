@@ -39,6 +39,7 @@
     "url": "https://github.com/Colm3na/DAppNodePackage-avalanche/issues"
   },
   "links": {
-    "avalabs": "https://www.avalabs.org/"
+    "avalabs": "https://www.avalabs.org/",
+    "upstream releases": "https://github.com/ava-labs/avalanchego/releases"
   }
 }
