@@ -1,7 +1,7 @@
 {
   "name": "avalanche.public.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "v1.1.2",
+  "upstreamVersion": "v1.1.4-rc.1",
   "upstreamRepo": "ava-labs/avalanchego",
   "shortDescription": "Avalanche",
   "description": "Avalanche is an open-source platform for launching highly decentralized applications, new financial primitives, and new interoperable blockchains.",
@@ -31,7 +31,6 @@
     "Edu (https://github.com/eduadiez)"
   ],
   "architectures": ["linux/amd64", "linux/arm64"],
-
   "repository": {
     "type": "git",
     "url": "https://github.com/Colm3na/DAppNodePackage-avalanche.git"
