@@ -5,7 +5,7 @@ services:
       context: build
       args:
         UPSTREAM_VERSION: v1.1.3
-    image: "avalanche.avalanche.public.dappnode.eth:0.1.0"
+    image: "avalanche.avalanche.public.dappnode.eth:0.1.2"
     volumes:
       - "chain:/root/.avalanchego/db"
       - "validator:/root/.avalanchego/staking"
@@ -17,7 +17,7 @@ services:
   wallet:
     build:
       context: build-ui
-    image: "wallet.avalanche.public.dappnode.eth:0.1.0"
+    image: "wallet.avalanche.public.dappnode.eth:0.1.2"
     restart: unless-stopped
 volumes:
   chain: {}
