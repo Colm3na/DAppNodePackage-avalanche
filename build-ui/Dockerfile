@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM:-amd64} node:12.14.1-buster-slim as build-deps
+FROM --platform=${BUILDPLATFORM:-amd64} node:15.6-buster-slim as build-deps
 
 WORKDIR /usr/src/app
 
