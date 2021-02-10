@@ -3,7 +3,7 @@ FROM --platform=${BUILDPLATFORM:-amd64} node:15.6-buster-slim as build-deps
 WORKDIR /usr/src/app
 
 RUN apt-get update && \ 
-    apt-get install -y git && \
+    apt-get install -y git g++ build-essential && \
     git clone https://github.com/ava-labs/avalanche-wallet.git . 
     
 COPY network.ts /usr/src/app/src/store/modules/network/network.ts
