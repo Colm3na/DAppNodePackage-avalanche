@@ -1,9 +1,9 @@
-FROM --platform=${BUILDPLATFORM:-amd64} node:15.6-buster-slim as build-deps
+FROM node:15.6-buster-slim as build-deps
 
 WORKDIR /usr/src/app
 
 RUN apt-get update && \ 
-    apt-get install -y git g++ build-essential python python-pip && \
+    apt-get install -y git g++ build-essential python && \
     git clone https://github.com/ava-labs/avalanche-wallet.git . 
     
 COPY network.ts /usr/src/app/src/store/modules/network/network.ts
@@ -17,4 +17,3 @@ FROM nginx:stable
 COPY --from=build-deps /usr/src/app/dist /usr/share/nginx/html
 
 ENTRYPOINT nginx -g 'daemon off;'
-
