@@ -1,0 +1,3769 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 14,
+    "links": [],
+    "panels": [
+      {
+        "collapsed": true,
+        "datasource": null,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 6,
+        "panels": [
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "The total stake of validators currently \"benched\" due to poor query responsiveness. Queries to these validators will immediately timeout until they are removed from the \"bench.\"",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 6,
+              "x": 0,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 68,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_X_benchlist_benched_weight{package=\"avalanche.public.dappnode.eth\"} / 10^9",
+                "interval": "",
+                "legendFormat": "AVAX Benched",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "AVAX Benched",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Percentage of queries for which we receive chits on time.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {},
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "percentunit"
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 6,
+              "x": 6,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 58,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "(increase(avalanche_X_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[1m]) + 1) / (increase(avalanche_X_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[1m]) + increase(avalanche_X_handler_query_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m]) + 1)",
+                "instant": false,
+                "interval": "",
+                "intervalFactor": 1,
+                "legendFormat": "",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Percentage of Successful Queries",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "percentunit",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Measures how much of each second is being spent handling different kinds of messages on the X-Chain.\\nThe value for chits, for example, is the number of seconds spent handling chits messages per second, over the last 30 seconds.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 60,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_X_handler_pull_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "pull query",
+                "refId": "A"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_push_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "push query",
+                "refId": "B"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_chits_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "chits",
+                "refId": "C"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "accepted",
+                "refId": "D"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "put",
+                "refId": "E"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_multi_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "multiput",
+                "refId": "F"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_ancestors_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors",
+                "refId": "G"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_failed_sum{instance=\"avalanche.avalanche.public.dappnode:9650\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get failed",
+                "refId": "H"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_query_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "query failed",
+                "refId": "I"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get accepted",
+                "refId": "J"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_ancestors_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "get ancestors failed",
+                "refId": "K"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Message Handling Time (Total)",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Measures how long each kind of request on the X-Chain takes to handle.\\nThe value for chits, for example, is how long, in seconds, it takes to handle a chits message.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 66,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_X_handler_pull_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_pull_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "pull query",
+                "refId": "A"
+              },
+              {
+                "expr": "avalanche_X_handler_push_query_sum{package=\"avalanche.public.dappnode.eth\"}",
+                "interval": "",
+                "legendFormat": "push query",
+                "refId": "B"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_chits_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "chits",
+                "refId": "C"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "accepted",
+                "refId": "D"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_get_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get",
+                "refId": "E"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "put",
+                "refId": "F"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_multi_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_multi_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "multiput",
+                "refId": "G"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_ancestors_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_get_ancestors_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors",
+                "refId": "H"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_get_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get failed",
+                "refId": "I"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_query_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_query_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "query failed",
+                "refId": "J"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_get_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get accepted",
+                "refId": "K"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_ancestors_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_X_handler_get_ancestors_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors failed",
+                "refId": "L"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Message Handling Time (per Message)",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 64,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "increase(avalanche_X_handler_dropped[1m])",
+                "interval": "",
+                "legendFormat": "Dropped",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Incoming Messages Dropped in Last Minute",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Measures how many of each kind of message are received per second on the X-Chain.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 17
+            },
+            "hiddenSeries": false,
+            "id": 62,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_X_handler_pull_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "pull query",
+                "refId": "A"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_push_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "push query",
+                "refId": "B"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "chits",
+                "refId": "C"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "accepted",
+                "refId": "D"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get",
+                "refId": "E"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "put",
+                "refId": "F"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_multi_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "multiput",
+                "refId": "G"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_ancestors_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get ancestors",
+                "refId": "H"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get failed",
+                "refId": "I"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_query_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "query failed",
+                "refId": "J"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get accepted",
+                "refId": "K"
+              },
+              {
+                "expr": "rate(avalanche_X_handler_get_ancestors_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get ancestors failed",
+                "refId": "L"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Messages Received per Second",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 17
+            },
+            "hiddenSeries": false,
+            "id": 70,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_X_handler_pending",
+                "interval": "",
+                "legendFormat": "Pending Messages",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Unprocessed Incoming Messages",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          }
+        ],
+        "title": "X-Chain",
+        "type": "row"
+      },
+      {
+        "collapsed": true,
+        "datasource": null,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 1
+        },
+        "id": 4,
+        "panels": [
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {
+                  "align": null,
+                  "filterable": false
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 6,
+              "x": 0,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 40,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_P_processing{package=\"avalanche.public.dappnode.eth\"}",
+                "interval": "",
+                "legendFormat": "Transactions",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Processing Blocks",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Percentage of queries for which we receive chits on time.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 6,
+              "x": 6,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 42,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "(increase(avalanche_P_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[2m]) + 1) / (increase(avalanche_P_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[2m]) + increase(avalanche_P_handler_query_failed_count{package=\"avalanche.public.dappnode.eth\"}[2m]) + 1)",
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Percentage of Successful Queries",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "The total stake of validators currently \"benched\" due to poor query responsiveness. Queries to these validators will immediately timeout until they are removed from the \"bench\".",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 6,
+              "x": 12,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 52,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_P_benchlist_benched_weight{package=\"avalanche.public.dappnode.eth\"} / 10^9",
+                "interval": "",
+                "legendFormat": "AVAX Benched",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "AVAX Benched",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "The average time between a block's issuance and rejection by this node over the last 5 minutes.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 6,
+              "x": 18,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 38,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_P_rejected_sum{package=\"avalanche.public.dappnode.eth\"}[5m]) / rate(avalanche_P_rejected_count{package=\"avalanche.public.dappnode.eth\"}[5m])",
+                "interval": "",
+                "legendFormat": "Avg Rejection Latency",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Average Block Rejection Latency",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Measures how much of each second is being spent handling different kinds of messages on the P-Chain.\\nThe value for chits, for example, is the number of seconds spent handling chits messages per second, over the last 30 seconds.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 44,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_P_handler_pull_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "pull query",
+                "refId": "A"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_push_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "push query",
+                "refId": "B"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_chits_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "chits",
+                "refId": "C"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "accepted",
+                "refId": "D"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get",
+                "refId": "E"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "put",
+                "refId": "F"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_multi_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "multiput",
+                "refId": "G"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_ancestors_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors",
+                "refId": "H"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get failed",
+                "refId": "I"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_query_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "query failed",
+                "refId": "J"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get accepted",
+                "refId": "K"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_ancestors_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors failed",
+                "refId": "L"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Message Handling Time (Total)",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "The number of blocks that are waiting to be issued because of a missing dependency.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 54,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_P_blocked{package=\"avalanche.public.dappnode.eth\"}",
+                "interval": "",
+                "legendFormat": "Blocks Pending Issuance",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Blocks Pending Issuance",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 16
+            },
+            "hiddenSeries": false,
+            "id": 56,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_P_handler_pending",
+                "interval": "",
+                "legendFormat": "Pending Messages",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Unprocessed Incoming Messages",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 7,
+              "x": 12,
+              "y": 16
+            },
+            "hiddenSeries": false,
+            "id": 32,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "round(increase(avalanche_P_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m]))",
+                "interval": "",
+                "legendFormat": "Accepted",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Accepted Blocks in Last Minute",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 5,
+              "x": 19,
+              "y": 16
+            },
+            "hiddenSeries": false,
+            "id": 34,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "round(increase(avalanche_P_rejected_count{package=\"avalanche.public.dappnode.eth\"}[1m]))",
+                "interval": "",
+                "legendFormat": "Rejected",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Rejected Blocks in Last Minute",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Measures how long each kind of request on the P-Chain takes to handle.\\nThe value for chits, for example, is how long, in seconds, it takes to handle a chits message.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 24
+            },
+            "hiddenSeries": false,
+            "id": 46,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_P_handler_pull_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_pull_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "pull query",
+                "refId": "A"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_push_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_push_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "push query",
+                "refId": "B"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_chits_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "chits",
+                "refId": "C"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "accepted",
+                "refId": "D"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_get_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get",
+                "refId": "E"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "put",
+                "refId": "F"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_multi_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_multi_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "multiput",
+                "refId": "G"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_ancestors_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_get_ancestors_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors",
+                "refId": "H"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_get_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get failed",
+                "refId": "I"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_query_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_query_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "query failed",
+                "refId": "J"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_get_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get accepted",
+                "refId": "K"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_ancestors_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_P_handler_get_ancestors_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors failed",
+                "refId": "L"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Message Handling Time (per Message)",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 7,
+              "x": 12,
+              "y": 24
+            },
+            "hiddenSeries": false,
+            "id": 48,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "increase(avalanche_P_handler_dropped[1m])",
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Incoming Messages Dropped in Last Minute",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "The average time between a block's issuance and acceptance by this node over the last 5 minutes.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 5,
+              "x": 19,
+              "y": 24
+            },
+            "hiddenSeries": false,
+            "id": 36,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_P_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[5m]) / rate(avalanche_P_accepted_count{package=\"avalanche.public.dappnode.eth\"}[5m])",
+                "interval": "",
+                "legendFormat": "Avg Acceptance Latency",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Average Block Acceptance Latency",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Measures how many of each kind of message are received per second on the P-Chain.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 24,
+              "x": 0,
+              "y": 32
+            },
+            "hiddenSeries": false,
+            "id": 50,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_P_handler_pull_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "pull query",
+                "refId": "A"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_push_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "push query",
+                "refId": "B"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "chits",
+                "refId": "C"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "accepted",
+                "refId": "D"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get",
+                "refId": "E"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "put",
+                "refId": "F"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_multi_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "multiput",
+                "refId": "G"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_ancestors_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get ancestors",
+                "refId": "H"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get failed",
+                "refId": "I"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_query_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "query failed",
+                "refId": "J"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get accepted",
+                "refId": "K"
+              },
+              {
+                "expr": "rate(avalanche_P_handler_get_ancestors_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get ancestors failed",
+                "refId": "L"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Messages Received per Second",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          }
+        ],
+        "title": "P-Chain",
+        "type": "row"
+      },
+      {
+        "collapsed": true,
+        "datasource": null,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 2
+        },
+        "id": 2,
+        "panels": [
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "The number of blocks that are waiting to be issued because of a missing dependency.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 7,
+              "x": 0,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 28,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_C_blocked{package=\"avalanche.public.dappnode.eth\"}",
+                "interval": "",
+                "legendFormat": "Blocks Pending Issuance",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Blocks Pending Issuance",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "The total stake of validators currently \"benched\" due to poor query responsiveness. Queries to these validators will immediately timeout until they are removed from the \"bench\".",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 6,
+              "x": 7,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 26,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_C_benchlist_benched_weight{package=\"avalanche.public.dappnode.eth\"} / 10^9",
+                "interval": "",
+                "legendFormat": "AVAX Benched",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "AVAX Benched",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 6,
+              "x": 13,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 10,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_C_rejected_count{package=\"avalanche.avalanche.public.dappnode.eth\"}",
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Rejected Blocks in Last Minute",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 5,
+              "x": 19,
+              "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 22,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "increase(avalanche_C_handler_dropped[1m])",
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Incoming Messages Dropped in Last Minute",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Measures how much of each second is being spent handling different kinds of messages on the C-Chain.\\nThe value for chits, for example, is the number of seconds spent handling chits messages per second, over the last 30 seconds.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 13,
+              "x": 0,
+              "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 18,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_C_handler_pull_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "pull query",
+                "refId": "A"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_push_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "push query",
+                "refId": "B"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_chits_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "instant": false,
+                "interval": "",
+                "legendFormat": "chits",
+                "refId": "C"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "accepted",
+                "refId": "D"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get",
+                "refId": "E"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "put",
+                "refId": "F"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_multi_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "multiput",
+                "refId": "G"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_ancestors_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors",
+                "refId": "H"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get failed",
+                "refId": "I"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_query_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "query failed",
+                "refId": "J"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get accepted",
+                "refId": "K"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_ancestors_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors failed",
+                "refId": "L"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Message Handling Time (Total)",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 6,
+              "x": 13,
+              "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 8,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "round(increase(avalanche_C_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m]))",
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Accepted Blocks in Last Minute",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 8,
+              "w": 5,
+              "x": 19,
+              "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 14,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_C_processing{package=\"avalanche.public.dappnode.eth\"}",
+                "interval": "",
+                "legendFormat": "Transactions",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Processing Blocks",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Measures how long each kind of request on the C-Chain takes to handle.\\nThe value for chits, for example, is how long, in seconds, it takes to handle a chits message.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 9,
+              "w": 13,
+              "x": 0,
+              "y": 16
+            },
+            "hiddenSeries": false,
+            "id": 20,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_C_handler_pull_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m]) / rate(avalanche_C_handler_pull_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "pull query",
+                "refId": "A"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_push_query_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_push_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "push query",
+                "refId": "B"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_chits_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "chits",
+                "refId": "C"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "accepted",
+                "refId": "D"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_get_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get",
+                "refId": "E"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "put",
+                "refId": "F"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_multi_put_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_multi_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "multiput",
+                "refId": "G"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_ancestors_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_get_ancestors_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors",
+                "refId": "H"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_get_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get failed",
+                "refId": "I"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_query_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_query_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "query failed",
+                "refId": "J"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_get_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get accepted",
+                "refId": "K"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_ancestors_failed_sum{package=\"avalanche.public.dappnode.eth\"}[1m])/rate(avalanche_C_handler_get_ancestors_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])/1000000000",
+                "interval": "",
+                "legendFormat": "get ancestors failed",
+                "refId": "L"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Message Handling Time (per Message)",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "The average time between a block's issuance and acceptance by this node over the last 5 minutes.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 9,
+              "w": 6,
+              "x": 13,
+              "y": 16
+            },
+            "hiddenSeries": false,
+            "id": 12,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_C_accepted_sum{package=\"avalanche.public.dappnode.eth\"}[5m]) / rate(avalanche_C_accepted_count{package=\"avalanche.public.dappnode.eth\"}[5m])",
+                "interval": "",
+                "legendFormat": "Avg Acceptance Latency",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Average Block Acceptance Latency",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Percentage of queries for which we receive chits on time.",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 9,
+              "w": 5,
+              "x": 19,
+              "y": 16
+            },
+            "hiddenSeries": false,
+            "id": 16,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "(increase(avalanche_C_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[2m]) + 1) / (increase(avalanche_C_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[2m]) + increase(avalanche_C_handler_query_failed_count{package=\"avalanche.public.dappnode.eth\"}[2m]) + 1)",
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Percentage of Successful Queries",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "Measures how many of each kind of message are received per second on the C-Chain",
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 9,
+              "w": 13,
+              "x": 0,
+              "y": 25
+            },
+            "hiddenSeries": false,
+            "id": 24,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "rate(avalanche_C_handler_pull_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "pull query",
+                "refId": "A"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_push_query_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "push query",
+                "refId": "B"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_chits_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "chits",
+                "refId": "C"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "accepted",
+                "refId": "D"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get",
+                "refId": "E"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "put",
+                "refId": "F"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_multi_put_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "multiput",
+                "refId": "G"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_ancestors_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get ancestors",
+                "refId": "H"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get failed",
+                "refId": "I"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_query_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "query failed",
+                "refId": "J"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_accepted_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get accepted",
+                "refId": "K"
+              },
+              {
+                "expr": "rate(avalanche_C_handler_get_ancestors_failed_count{package=\"avalanche.public.dappnode.eth\"}[1m])",
+                "interval": "",
+                "legendFormat": "get ancestors failed",
+                "refId": "L"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Messages Received per Second",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "custom": {}
+              },
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 9,
+              "w": 11,
+              "x": 13,
+              "y": 25
+            },
+            "hiddenSeries": false,
+            "id": 30,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "avalanche_C_handler_pending",
+                "interval": "",
+                "legendFormat": "Pending Messages",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Unprocessed Incoming Messages",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          }
+        ],
+        "title": "C-Chain",
+        "type": "row"
+      }
+    ],
+    "refresh": false,
+    "schemaVersion": 26,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-30m",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Avalanche",
+    "uid": "eEUaAk8Mz",
+    "version": 8
+  }
