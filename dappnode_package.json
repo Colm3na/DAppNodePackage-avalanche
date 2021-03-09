@@ -1,10 +1,10 @@
 {
   "name": "avalanche.public.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "v1.1.3",
+  "upstreamVersion": "v1.2.3-signed",
   "upstreamRepo": "ava-labs/avalanchego",
-  "shortDescription": "Avalanche",
-  "description": "Avalanche is an open-source platform for launching highly decentralized applications, new financial primitives, and new interoperable blockchains.",
+  "shortDescription": "Avalanche Node and Wallet WebUI",
+  "description": "Avalanche is an open-source platform for launching highly decentralized applications, new financial primitives, and new interoperable blockchains. This package includes a full node and a local Wallet",
   "categories": ["Blockchain"],
   "license": "GLP-3.0",
   "mainService": "wallet",
@@ -27,7 +27,7 @@
     "Pol (https://github.com/Pol-Lanski)",
     "Edu (https://github.com/eduadiez)"
   ],
-  "architectures": ["linux/amd64", "linux/arm64"],
+  "architectures": ["linux/amd64"],
   "repository": {
     "type": "git",
     "url": "https://github.com/Colm3na/DAppNodePackage-avalanche.git"

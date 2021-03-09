@@ -1,0 +1,12 @@
+[
+    {
+        "labels": {
+            "package": "avalanche.public.dappnode.eth",
+            "service": "avalanche.avalanche.public.dappnode",
+            "__metrics_path__": "/ext/metrics"
+        },
+        "targets": [
+            "avalanche.avalanche.public.dappnode:9650"
+        ]
+    }
+]
