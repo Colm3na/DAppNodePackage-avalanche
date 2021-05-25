@@ -18,6 +18,5 @@ RUN ln -s /root/avalanchego/avalanchego /usr/local/bin
 
 ENTRYPOINT [ "sh", "-c", "exec avalanchego \
     --dynamic-public-ip ifconfigco \
-    --plugin-dir /root/avalanchego/plugins \
     --http-host 0.0.0.0 \
     $EXTRA_OPTS" ]
