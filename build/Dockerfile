@@ -17,6 +17,5 @@ COPY --from=binary avalanchego /root/avalanchego
 RUN ln -s /root/avalanchego/avalanchego /usr/local/bin 
 
 ENTRYPOINT [ "sh", "-c", "exec avalanchego \
-    --dynamic-public-ip ifconfigco \
     --http-host 0.0.0.0 \
     $EXTRA_OPTS" ]
