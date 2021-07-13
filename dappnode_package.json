@@ -1,7 +1,7 @@
 {
   "name": "avalanche.public.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "v1.4.8",
+  "upstreamVersion": "v1.4.10",
   "upstreamRepo": "ava-labs/avalanchego",
   "shortDescription": "Avalanche Node and Wallet WebUI",
   "description": "Avalanche is an open-source platform for launching highly decentralized applications, new financial primitives, and new interoperable blockchains. This package includes a full node and a local Wallet",
