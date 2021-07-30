@@ -4,7 +4,7 @@ services:
     build:
       context: build
       args:
-        UPSTREAM_VERSION: v1.4.8
+        UPSTREAM_VERSION: v1.4.12
     image: "avalanche.avalanche.public.dappnode.eth:0.1.0"
     volumes:
       - "chain:/root/.avalanchego/db"
