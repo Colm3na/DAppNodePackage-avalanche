@@ -7,6 +7,7 @@ RUN apt-get update && \
     git clone https://github.com/ava-labs/avalanche-wallet.git . 
 
 COPY constants.ts /usr/src/app/src/store/modules/network/constants.ts
+COPY network.ts /usr/src/app/src/store/modules/network/network.ts
 
 RUN yarn && \
     yarn build
