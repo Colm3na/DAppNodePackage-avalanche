@@ -4,7 +4,11 @@ WORKDIR /usr/src/app
 
 RUN apt-get update && \ 
     apt-get install -y git g++ build-essential python && \
-    git clone https://github.com/ava-labs/avalanche-wallet.git . 
+    git clone https://github.com/ava-labs/avalanche-wallet.git . && \
+    cd avalanche-wallet && \
+    git fetch --tags && \
+    latestTag=$(git describe --tags `git rev-list --tags --max-count=1`) && \
+    git checkout $latestTag
 
 COPY constants.ts /usr/src/app/src/store/modules/network/constants.ts
 COPY network.ts /usr/src/app/src/store/modules/network/network.ts
