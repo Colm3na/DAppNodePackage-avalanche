@@ -15,6 +15,6 @@ RUN yarn && \
 FROM nginx:stable
 
 # Copiamos el la web del wallet a /usr/share/nginx/html ya que es la carpeta que por defecto se distribuye con el nginx en el ordenador de otro
-COPY --from=build-deps /usr/src/app/dist /usr/share/nginx/html
+#COPY --from=build-deps /usr/src/app/dist /usr/share/nginx/html
 
 ENTRYPOINT nginx -g 'daemon off;'
