@@ -6,7 +6,7 @@
   "shortDescription": "Avalanche Node and Wallet WebUI",
   "description": "Avalanche is an open-source platform for launching highly decentralized applications, new financial primitives, and new interoperable blockchains. This package includes a full node and a local Wallet",
   "categories": ["Blockchain"],
-  "license": "GLP-3.0",
+  "license": "GPL-3.0",
   "mainService": "wallet",
   "type": "service",
   "backup": [
