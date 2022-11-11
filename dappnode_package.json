@@ -38,6 +38,6 @@
   "links": {
     "Avalabs": "https://www.avalabs.org/",
     "upstream releases": "https://github.com/ava-labs/avalanchego/releases",
-    "RPC Endpoint": "http://avalanche.avalanche.public.dappnode:9650/ext/bc/C/rpc"
+    "endpoint": "http://avalanche.avalanche.public.dappnode:9650/ext/bc/C/rpc"
   }
 }
