@@ -18,4 +18,5 @@ RUN ln -s /root/avalanchego/avalanchego /usr/local/bin
 
 ENTRYPOINT [ "sh", "-c", "exec avalanchego \
     --http-host 0.0.0.0 \
+    --staking-port=$P2P_PORT \
     $EXTRA_OPTS" ]

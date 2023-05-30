@@ -10,9 +10,10 @@ services:
       - "chain:/root/.avalanchego/db"
       - "validator:/root/.avalanchego/staking"
     environment:
-      - EXTRA_OPTS
+      - P2P_PORT=21061
+      - EXTRA_OPT=""
     ports:
-      - "9651"
+      - "21061:21061/tcp"
     restart: unless-stopped
   wallet:
     build:
