@@ -1,4 +1,4 @@
-FROM node:15.6-buster-slim as build-deps
+FROM node:20-bullseye-slim as build-deps
 
 WORKDIR /usr/src/app
 
