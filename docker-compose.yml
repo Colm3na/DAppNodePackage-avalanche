@@ -14,11 +14,6 @@ services:
     ports:
       - "9651"
     restart: unless-stopped
-  wallet:
-    build:
-      context: build-ui
-    image: "wallet.avalanche.public.dappnode.eth:0.1.0"
-    restart: unless-stopped
 volumes:
   chain: {}
   validator: {}
