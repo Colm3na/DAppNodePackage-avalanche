@@ -3,11 +3,10 @@
   "version": "0.1.31",
   "upstreamVersion": "v1.10.2",
   "upstreamRepo": "ava-labs/avalanchego",
-  "shortDescription": "Avalanche Node and Wallet WebUI",
-  "description": "Avalanche is an open-source platform for launching highly decentralized applications, new financial primitives, and new interoperable blockchains. This package includes a full node and a local Wallet",
+  "shortDescription": "Avalanche Node",
+  "description": "Avalanche is an open-source platform for launching highly decentralized applications, new financial primitives, and new interoperable blockchains. This package includes a full node",
   "categories": ["Blockchain"],
   "license": "GPL-3.0",
-  "mainService": "wallet",
   "type": "service",
   "backup": [
     {
