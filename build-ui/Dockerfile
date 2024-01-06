@@ -1,15 +1,15 @@
-FROM node:15.6-buster-slim as build-deps
+FROM node:16.20.2-bookworm-slim as build-deps
 
 WORKDIR /usr/src/app
 
 RUN apt-get update && \ 
-    apt-get install -y git g++ build-essential python && \
-    git clone https://github.com/ava-labs/avalanche-wallet.git . 
+    apt-get install -y git npm build-essential && \
+    git clone https://github.com/ava-labs/avalanche-wallet.git .
 
 COPY constants.ts /usr/src/app/src/store/modules/network/constants.ts
 COPY network.ts /usr/src/app/src/store/modules/network/network.ts
 
-RUN yarn && \
+RUN yarn install && \
     yarn build
 
 FROM nginx:stable

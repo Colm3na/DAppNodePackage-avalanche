@@ -6,5 +6,11 @@
       "remote": "Thu, 21 Jan 2021 17:09:17 GMT"
     },
     "link": "https://dappnode.github.io/sdk-publish/?r=avalanche.public.dappnode.eth&v=0.1.0&h=%2Fipfs%2FQmXFaKPfNxwHKSaec3TguQr5XLjuainakTAe2QCQs9EZni&d=0xF35960302a07022aBa880DFFaEC2Fdd64d5BF1c1"
+  },
+  "0.1.31": {
+    "hash": "/ipfs/QmVYagrtyaeweu4oczMce7RgYiMxcte13ugQjbPSL7Bza1",
+    "uploadedTo": {
+      "dappnode": "Thu, 04 Jan 2024 00:21:52 GMT"
+    }
   }
 }

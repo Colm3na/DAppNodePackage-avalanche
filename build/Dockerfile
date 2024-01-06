@@ -1,4 +1,4 @@
-FROM debian:buster-slim as binary
+FROM debian:bookworm-slim as binary
 
 ARG TARGETARCH
 ARG UPSTREAM_VERSION
@@ -10,7 +10,7 @@ RUN apt update && apt install -y --no-install-recommends wget ca-certificates &&
     tar -xzf avalanchego-linux-${TARGETARCH:-amd64}-$UPSTREAM_VERSION.tar.gz && \
     mv avalanchego-${UPSTREAM_VERSION} avalanchego
 
-FROM debian:buster-slim
+FROM debian:bookworm-slim
 
 COPY --from=binary avalanchego /root/avalanchego
 

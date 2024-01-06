@@ -12,7 +12,8 @@ services:
     environment:
       - EXTRA_OPTS
     ports:
-      - "9651"
+      - "9651:9651/udp"
+      - "9651:9651/tcp"
     restart: unless-stopped
   wallet:
     build:

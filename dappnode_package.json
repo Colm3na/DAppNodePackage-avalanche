@@ -25,7 +25,8 @@
     "Tropicar (https://github.com/tropicar)",
     "Pablo (https://github.com/pablomendezroyo)",
     "Pol (https://github.com/Pol-Lanski)",
-    "Edu (https://github.com/eduadiez)"
+    "Edu (https://github.com/eduadiez)",
+    "Voss (https://github.com/alexpeterson91)"
   ],
   "architectures": ["linux/amd64"],
   "repository": {
@@ -38,6 +39,7 @@
   "links": {
     "Avalabs": "https://www.avalabs.org/",
     "upstream releases": "https://github.com/ava-labs/avalanchego/releases",
-    "endpoint": "http://avalanche.avalanche.public.dappnode:9650/ext/bc/C/rpc"
+    "endpoint": "http://avalanche.avalanche.public.dappnode:9650/ext/bc/C/rpc",
+    "ui": "http://wallet.avalanche.public.dappnode"
   }
 }
