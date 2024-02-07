@@ -38,6 +38,7 @@
   "links": {
     "Avalabs": "https://www.avalabs.org/",
     "upstream releases": "https://github.com/ava-labs/avalanchego/releases",
+    "WalletUI": "http://avalanche.public.dappnode/",
     "endpoint": "http://avalanche.avalanche.public.dappnode:9650/ext/bc/C/rpc"
   }
 }
