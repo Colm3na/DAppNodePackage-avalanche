@@ -4,11 +4,11 @@ services:
     build:
       context: build
       args:
-        UPSTREAM_VERSION: v1.11.3
-    image: "avalanche.avalanche.public.dappnode.eth:0.1.0"
+        UPSTREAM_VERSION: v1.11.4
+    image: avalanche.avalanche.public.dappnode.eth:0.1.0
     volumes:
-      - "chain:/root/.avalanchego/db"
-      - "validator:/root/.avalanchego/staking"
+      - chain:/root/.avalanchego/db
+      - validator:/root/.avalanchego/staking
     environment:
       - EXTRA_OPTS
     ports:
@@ -17,7 +17,7 @@ services:
   wallet:
     build:
       context: build-ui
-    image: "wallet.avalanche.public.dappnode.eth:0.1.0"
+    image: wallet.avalanche.public.dappnode.eth:0.1.0
     restart: unless-stopped
 volumes:
   chain: {}
